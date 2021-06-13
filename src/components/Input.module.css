@@ -1,0 +1,14 @@
+.inputBox {
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+}
+
+.input {
+	height: 35px;
+}
+
+.btn {
+	height: 35px;
+}

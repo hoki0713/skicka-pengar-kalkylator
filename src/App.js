@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react';
+
+import Kvito from './components/Kvito';
+import KvittosContext from './store/kvittos-context';
+import classes from './App.module.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const kvittosCtx = useContext(KvittosContext);
+
+	return (
+		<div className={classes.app}>
+			<h1>
+				Hur mycket pengar ska Hojeong skicka?{' '}
+				<span>{kvittosCtx.twoDecimal(kvittosCtx.hojeongTotal)} SEK</span>
+			</h1>
+			<div className={classes.kvittoBox}>
+				<Kvito
+					title="Mat Saker"
+					rate="0.25"
+					total={kvittosCtx.matTotal}
+					items={kvittosCtx.matKvittos}
+					onAdd={kvittosCtx.addMatKvitto}
+					onRemove={kvittosCtx.removeMatKvitto}
+				/>
+				<Kvito
+					title="Annat"
+					rate="0.5"
+					total={kvittosCtx.annatTotal}
+					items={kvittosCtx.annatKvittos}
+					onAdd={kvittosCtx.addAnnatKvitto}
+					onRemove={kvittosCtx.removeAnnatKvitto}
+				/>
+			</div>
+		</div>
+	);
 }
 
 export default App;

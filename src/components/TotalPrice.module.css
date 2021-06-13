@@ -1,0 +1,9 @@
+.detail {
+	font-size: medium;
+	display: flex;
+	justify-content: space-between;
+}
+
+.detailPrice {
+	min-width: 200px;
+}

@@ -1,0 +1,9 @@
+.item {
+	display: flex;
+	justify-content: space-between;
+	border-bottom: 1px dotted #000;
+}
+
+.item p {
+	padding: 5px;
+}
