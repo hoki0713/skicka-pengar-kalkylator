@@ -1,12 +1,15 @@
-import ReactDOM from 'react-dom';
+import { BrowserRouter } from "react-router-dom";
+import ReactDOM from "react-dom";
 
-import './index.css';
-import App from './App';
-import { KvittosContextProvider } from './store/kvittos-context';
+import "./index.css";
+import App from "./App";
+import { KvittosContextProvider } from "./store/kvittos-context";
 
 ReactDOM.render(
-	<KvittosContextProvider>
-		<App />
-	</KvittosContextProvider>,
-	document.getElementById('root')
+  <BrowserRouter>
+    <KvittosContextProvider>
+      <App />
+    </KvittosContextProvider>
+  </BrowserRouter>,
+  document.getElementById("root")
 );

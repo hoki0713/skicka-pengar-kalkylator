@@ -1,0 +1,35 @@
+.box {
+  width: 100%;
+  box-sizing: border-box;
+
+  display: grid;
+  grid-template-columns: 100px auto 100px;
+  grid-template-rows: 60px 100px 10px auto;
+  grid-template-areas:
+    ". a ."
+    ". b ."
+    ". . ."
+    ". c .";
+
+  align-items: center;
+}
+
+.head {
+  grid-area: a;
+}
+
+.head > span {
+  color: blue;
+}
+
+.card {
+  grid-area: b;
+}
+
+.content {
+  grid-area: c;
+
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+}

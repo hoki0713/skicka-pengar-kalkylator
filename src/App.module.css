@@ -1,12 +1,9 @@
 .app {
-	margin: 20px;
-}
+  width: 1200px;
+  height: 100vh;
+  box-sizing: border-box;
+  overflow: hidden;
 
-.app > h1 > span {
-	color: blue;
-}
-
-.kvittoBox {
-	display: flex;
-	justify-content: flex-start;
+  display: grid;
+  grid-template-rows: 50px auto 50px;
 }
